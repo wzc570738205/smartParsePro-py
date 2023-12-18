@@ -47,8 +47,8 @@ def smart_address(address_string,town_village=True, change2new=False):
   text = address_string.replace(obj.get('province'),'').replace(obj.get('city'),'').replace(obj.get('county'),'').replace(obj.get('town'),'').replace(obj.get('village'),'')
   
   obj['name'] = find_name(text,obj)
-  # 清理详情信息中的名字
-  obj['detail'] = address.get('detail').replace(obj.get('name'),"").strip()
+  # 清理详情信息中的名字以及乡镇、村、社区
+  obj['detail'] = address.get('detail').replace(obj.get('name'),"").replace(obj.get('town'),'').replace(obj.get('village'),'').strip()
 
   return obj
 
