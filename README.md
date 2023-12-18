@@ -45,7 +45,7 @@ python3 index.py serve
 python3 index.py serve 8088 
 ```
 ## api调用
-```JSON
+```JS
 URL: `http://127.0.0.1:3000/smart_address`
 METHOD: 'POST'
 BODY:`
