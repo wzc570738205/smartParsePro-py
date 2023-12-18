@@ -1,7 +1,7 @@
-# smartParsePro-py
-[JavaScript版本](https://github.com/wzc570738205/smartParsePro)
+# 地址解析识别python版本
+> [JavaScript版本](https://github.com/wzc570738205/smartParsePro)
 
-地址解析识别python版本，项目基于[JioNLP 地址解析](https://github.com/dongrixinyu/JioNLP/wiki/Gadget-%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3#user-content-%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)来进行地址识别
+项目基于[JioNLP 地址解析](https://github.com/dongrixinyu/JioNLP/wiki/Gadget-%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3#user-content-%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90)来进行地址识别
 
 地址库：[2020年国家统计局行政区划](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020)
 
@@ -67,3 +67,13 @@ RESPONSE:`
     "village": ""
 }`
 ```
+
+#### LICENSE：[Apache License](https://github.com/wzc570738205/smartParsePro/blob/master/LICENSE)
+#### IDE:致谢[JetBrains](https://www.jetbrains.com/?from=smartParsePro)为本项目提供免费license支持
+[![JetBrains](http://cdn.wangzc.wang/LOGO-1.png)](https://www.jetbrains.com/?from=smartParsePro)
+#### 联系我，欢迎交流
+<img src="https://user-images.githubusercontent.com/33707245/211184007-971089c8-bdea-4d99-80d9-78de2fd59e01.png" width="300px">
+
+#### qq交流群
+
+![WX20210922-091703.png](https://cdn.wangzc.wang/uPic/WX20210922-09170315%20.png)
