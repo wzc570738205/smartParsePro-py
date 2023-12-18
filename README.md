@@ -19,7 +19,7 @@ pip3 install addressrec
 直接运行
 ```bash
 import addressrec
-print(addressrec('王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号', True, False))
+print(addressrec.run('王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号', True, False))
 
 # addressrec(text, town_village, town_village)
 # "text":"王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号",
