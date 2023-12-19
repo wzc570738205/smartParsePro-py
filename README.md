@@ -9,7 +9,7 @@
 
 基于[Levenshtein](https://github.com/Levenshtein) 字符串相似度算法来进行详细地址过滤
 
-# 依赖下载
+# [依赖下载](https://pypi.org/project/addressrec/)
 python支持版本：`>=3.8`
 
 ```bash
