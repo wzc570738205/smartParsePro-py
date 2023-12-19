@@ -5,17 +5,16 @@ import jionlp as jio
 import jieba.posseg as pseg
 import re
 import Levenshtein
-from flask import Flask, request, jsonify
 import sys
 
-paddle.enable_static()
+paddle.enable_static() 
 jieba.enable_paddle()
 
 # 地址识别 
 # address_string 需要识别的字符串
 # town_village   指定参数town_village(bool)，可获取乡镇、村、社区两级详细地名
 # change2new     指定参数change2new(bool)可自动将旧地址转换为新地址
-def smart_address(address_string,town_village=True, change2new=False):
+def run(address_string,town_village=True, change2new=False):
   obj = {
     'phone': "",
     'province': "",
@@ -127,30 +126,5 @@ def extract_phone_numbers(text):
         'landline_numbers': landline_numbers
     }
 
-# 获取命令行参数
-args = sys.argv
-arg1 = args[1] if len(args) > 1 else ''
-port = int(args[2]) if len(args) > 2 and args[2].isdigit() else 3000
 
-
-app = Flask(__name__)
-
-@app.route('/smart_address', methods=['POST'])
-def handle_smart_address():
-    data = request.get_json()
-
-    text = data.get('text', '')
-    town_village = data.get('town_village', True)
-    change2new = data.get('change2new', False)
-    result = smart_address(text, town_village, change2new)
-
-    if result:
-        return jsonify(result)
-    else:
-        return jsonify({"error": "Failed to process the request"}), 500
-
-if __name__ == '__main__' and arg1 == 'serve':
-    app.run(host='0.0.0.0', port=port)
-else:
-   print(smart_address(arg1))
    

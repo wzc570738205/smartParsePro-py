@@ -1,0 +1,17 @@
+[project]
+name = "addressrec"
+version = "0.0.11"
+authors = [
+    {name = "zhichao wang", email = "wzc570738205@gmail.com"},
+]
+description = "字符串智能解析，解析省市区、姓名、电话"
+requires-python = ">=3.8"
+dependencies = [
+    "jionlp",
+    "jieba",
+    "Levenshtein",
+    "paddlepaddle==2.4.2"
+]
+
+[project.urls]
+Source = "https://github.com/wzc570738205/smartParsePro-py"

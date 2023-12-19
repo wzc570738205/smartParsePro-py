@@ -1,0 +1,4 @@
+jionlp
+jieba
+Levenshtein
+paddlepaddle==2.4.2
