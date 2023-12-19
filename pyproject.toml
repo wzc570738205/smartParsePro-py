@@ -1,11 +1,12 @@
 [project]
 name = "addressrec"
-version = "0.0.11"
+version = "0.0.14"
 authors = [
     {name = "zhichao wang", email = "wzc570738205@gmail.com"},
 ]
 description = "字符串智能解析，解析省市区、姓名、电话"
-requires-python = ">=3.8"
+readme = "README.md"
+requires-python = ">=3.0"
 dependencies = [
     "jionlp",
     "jieba",
