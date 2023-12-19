@@ -40,7 +40,38 @@ print(addressrec.run('王志超029-68216000新疆维吾尔自治区乌鲁木齐�
     "village": ""
 }
 ```
+封装为接口调用：
+```python
+# pip3 install flask
+from flask import Flask, request, jsonify
 
+app = Flask(__name__)
+@app.route('/smart_address', methods=['POST'])
+def handle_smart_address():
+    data = request.get_json()
+
+    text = data.get('text', '')
+    town_village = data.get('town_village', True)
+    change2new = data.get('change2new', False)
+    result = smart_address(text, town_village, change2new)
+
+    if result:
+        return jsonify(result)
+    else:
+        return jsonify({"error": "Failed to process the request"}), 500
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000)
+
+#URL: `http://127.0.0.1:3000/smart_address`
+#METHOD: 'POST'
+#BODY:
+#{
+#    "text":"王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号",
+#    "town_village": true, //可不传默认true 指定参数town_village(bool)，可获取乡镇、村、社区两级详细地名 
+#    "change2new": false //可不传默认false 指定参数change2new(bool)可自动将旧地址转换为新地址
+#}
+```
 # 识别结果测试
 ```bash
 广东省珠海市香洲区盘山路28号幸福茶庄,陈景勇，13593464918 识别结果：
