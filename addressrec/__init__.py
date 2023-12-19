@@ -5,7 +5,6 @@ import jionlp as jio
 import jieba.posseg as pseg
 import re
 import Levenshtein
-import sys
 
 paddle.enable_static() 
 jieba.enable_paddle()
