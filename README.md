@@ -23,7 +23,7 @@ pip3 install addressrec
 import addressrec
 print(addressrec.run('王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号', True, False))
 
-# addressrec(text, town_village, town_village)
+# addressrec.run(text, town_village, town_village)
 # "text":"王志超029-68216000新疆维吾尔自治区乌鲁木齐市沙依巴克区西虹东路463号",
 # "town_village": True, //可不传默认True 指定参数town_village(bool)，可获取乡镇、村、社区两级详细地名 
 # "change2new": False //可不传默认True 指定参数change2new(bool)可自动将旧地址转换为新地址
@@ -46,6 +46,7 @@ print(addressrec.run('王志超029-68216000新疆维吾尔自治区乌鲁木齐�
 ```python
 # pip3 install flask
 from flask import Flask, request, jsonify
+import addressrec
 
 app = Flask(__name__)
 @app.route('/smart_address', methods=['POST'])
@@ -55,7 +56,7 @@ def handle_smart_address():
     text = data.get('text', '')
     town_village = data.get('town_village', True)
     change2new = data.get('change2new', False)
-    result = smart_address(text, town_village, change2new)
+    result = addressrec.run(text, town_village, change2new)
 
     if result:
         return jsonify(result)
