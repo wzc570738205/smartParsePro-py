@@ -13,13 +13,33 @@
 
 基于[Levenshtein](https://github.com/Levenshtein) 字符串相似度算法来进行详细地址过滤
 
+# API接口使用
+```
+npm i -D @gradio/client
+```
+```js
+import { client } from "@gradio/client";
+
+client("wzc2334234/address").then((res) => {
+  res
+    .predict("/predict", [
+      "收货人: 李节霁 手机号码: 15180231234 所在地区: 浙江省金华市婺城区西关街道详细地址: 金磐路上坞街",
+    ])
+    .then((e) => {
+      console.log(JSON.parse(e.data[0]), "data");
+    });
+});
+```
+
 # [依赖下载](https://pypi.org/project/addressrec/)
 python支持版本：`>=3.8 and <= 3.10`
+
+
 
 ```bash
 pip3 install addressrec
 ```
-# 使用
+# 本地使用
 直接运行
 ```bash
 import addressrec
